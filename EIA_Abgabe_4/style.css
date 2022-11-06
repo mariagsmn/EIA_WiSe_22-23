@@ -1,16 +1,42 @@
 header {
-   background-image: url(./background.jpg);
-   height : 200px;
+   background: url(background.jpg);
+   height: 200px;
+   width: 100%;
+   background-repeat: no-repeat;
+   background-size: cover;
    text-align: right;
-   font-size: 20px;
-   margin: 0;
+   display: flex;
+   justify-content: space-between;
+}
+
+a {
+   text-decoration: none;
+   color: white
+}
+
+.is-active {
+   text-decoration: underline;
+}
+
+a:hover {
+   text-decoration: underline;
+}
+
+footer {
+   display: flex;
+   justify-content: space-between;
+}
+
+* {
+   font-family:Verdana, Geneva, Tahoma, sans-serif ;
 }
 
 body {
    margin: 0;
+   padding: 100px;
 }
 
-a {
-    color: black;
-    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif
+input {
+   background-color: black;
+   color:blanchedalmond;
 }
