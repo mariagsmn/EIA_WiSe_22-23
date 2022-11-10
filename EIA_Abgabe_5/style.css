@@ -1,5 +1,5 @@
 header {
-   background: url(background.jpg);
+   background-image: url(background.jpg);
    height: 200px;
    width: 100%;
    background-repeat: no-repeat;
@@ -70,7 +70,8 @@ input {
 }
 
 @keyframes slideshow {
-   50% {background-image: url(./background2.jpg);}
+   33% {background-image: url(./background.jpg);}
+   66% {background-image: url(./background2.jpg);}
    100% {background-image: url(./background3.jpg);}
 }
 
