@@ -7,6 +7,11 @@ header {
    text-align: right;
    display: flex;
    justify-content: space-between;
+   animation: slideshow;
+   animation-duration: 3s;
+   animation-iteration-count: infinite;
+   animation-direction: alternate-reverse;
+   animation-play-state: running;
 }
 
 a {
@@ -28,7 +33,7 @@ footer {
 }
 
 * {
-   font-family: Verdana, Geneva, Tahoma, sans-serif;
+   font-family: myownfont;
 }
 
 body {
@@ -62,5 +67,15 @@ input {
 .link:hover {
    transform: scale(1.5);
    opacity: 1;
+}
+
+@keyframes slideshow {
+   50% {background-image: url(./background2.jpg);}
+   100% {background-image: url(./background3.jpg);}
+}
+
+@font-face {
+   font-family: myownfont;
+   src: url(./XanhMono-Regular.ttf);
 }
 
