@@ -1,0 +1,66 @@
+header {
+   background: url(background.jpg);
+   height: 200px;
+   width: 100%;
+   background-repeat: no-repeat;
+   background-size: cover;
+   text-align: right;
+   display: flex;
+   justify-content: space-between;
+}
+
+a {
+   text-decoration: none;
+   color: white
+}
+
+.is-active {
+   text-decoration: underline;
+}
+
+a:hover {
+   text-decoration: underline;
+}
+
+footer {
+   display: flex;
+   justify-content: space-between;
+}
+
+* {
+   font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+body {
+   margin: 0;
+   padding: 100px;
+}
+
+input {
+   background-color: black;
+   color: blanchedalmond;
+}
+
+.image {
+   padding: 50px;
+   transition: transform .3s;
+   width: 300px;
+   height: 200px;
+   margin: 0 auto;
+   opacity: .5;
+}
+
+.image:hover {
+   transform: scale(1.5);
+   opacity: 1;
+}
+
+.link {
+   opacity: .5;
+}
+
+.link:hover {
+   transform: scale(1.5);
+   opacity: 1;
+}
+
