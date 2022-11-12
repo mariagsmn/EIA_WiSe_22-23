@@ -13,7 +13,6 @@ header {
    animation-direction: alternate-reverse;
    animation-play-state: running;
 }
-
 a {
    text-decoration: none;
    color: white
@@ -42,8 +41,8 @@ body {
 }
 
 input {
-   background-color: black;
-   color: blanchedalmond;
+   background-color: rgb(230, 226, 220);
+   color: black;
 }
 
 .image {
@@ -80,3 +79,14 @@ input {
    src: url(./XanhMono-Regular.ttf);
 }
 
+.banner {
+   position: fixed;
+   top: 90px;
+   right: -30px;
+   transform: rotate(45deg);
+   margin: -2px;
+   margin-top: -5px;
+   background-color: darkgray;
+   color: black;
+   padding: 3px;
+}
