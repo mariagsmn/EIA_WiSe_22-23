@@ -75,7 +75,7 @@ window.addEventListener('load', function () {
         wachstumnumbers.innerHTML = (popchange1/1000000).toFixed(2)+ " Mio"; 
         wachstumspercent.innerHTML = (popchange2).toFixed(2) +" %";
         chart.style.height = chartheight + "%"
-    }
+    } 
 
 
 
