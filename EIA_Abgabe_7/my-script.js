@@ -13,6 +13,7 @@ window.addEventListener('load', function () {
     const france = "Frankreich";
     const italy = "Italien";
     const sweden = "Schweden";
+    const europe = "Europa";
     const populationChangeDE = (populationDE2022 / populationDE2000 - 1) * 100;
     const populationChangeFR = (populationFR2022 / populationFR2000 - 1) * 100;
     const populationChangeIT = (populationIT2022 / populationIT2000 - 1) * 100;
@@ -43,28 +44,36 @@ window.addEventListener('load', function () {
     const populationnew = document.querySelector(".populationnew");
     const wachstumnumbers = document.querySelector(".wachstumnumbers");
     const wachstumspercent = document.querySelector(".wachstumpercent");
+    const textpopold = document.querySelector(".text1");
+    const textpopnew = document.querySelector(".text2");
+    const textwachstumsnumbers = document.querySelector(".text3");
+    const textwachstumpercent = document.querySelector(".text4");
     const chart = document.querySelector(".chart");
     document.querySelector(".germany").addEventListener("click", function () {
-        calc(populationDE2000, populationDE2022, populationChangeDE2, populationChangeDE, populationChangeDE);
+        calc(populationDE2000, populationDE2022, populationChangeDE2, populationChangeDE, populationChangeDE, germany);
     });
     document.querySelector(".france").addEventListener("click", function () {
-        calc(populationFR2000, populationFR2022, populationChangeFR2, populationChangeFR, populationChangeFR);
+        calc(populationFR2000, populationFR2022, populationChangeFR2, populationChangeFR, populationChangeFR, france);
     });
     document.querySelector(".italy").addEventListener("click", function () {
-        calc(populationIT2000, populationIT2022, populationChangeIT2, populationChangeIT, populationChangeIT);
+        calc(populationIT2000, populationIT2022, populationChangeIT2, populationChangeIT, populationChangeIT, italy);
     });
     document.querySelector(".sweden").addEventListener("click", function () {
-        calc(populationSW2000, populationSW2022, populationChangeSW2, populationChangeSW, populationChangeSW);
+        calc(populationSW2000, populationSW2022, populationChangeSW2, populationChangeSW, populationChangeSW, sweden);
     });
     document.querySelector(".stars").addEventListener("click", function () {
-        calc(populationEU2000, populationEU2022, populationChangeEU2, populationChangeEU, populationChangeEU);
+        calc(populationEU2000, populationEU2022, populationChangeEU2, populationChangeEU, populationChangeEU, europe);
     });
-    function calc(population2000, population2022, popchange1, popchange2, chartheight) {
+    function calc(population2000, population2022, popchange1, popchange2, chartheight, name) {
         populationold.innerHTML = (population2000 / 1000000).toFixed(2) + " Mio";
         populationnew.innerHTML = (population2022 / 1000000).toFixed(2) + " Mio";
         wachstumnumbers.innerHTML = (popchange1 / 1000000).toFixed(2) + " Mio";
         wachstumspercent.innerHTML = (popchange2).toFixed(2) + " %";
         chart.style.height = chartheight + "%";
+        textpopold.innerHTML = "Gesamtzahl Einwohner*innen" + name + "in 2000";
+        textpopnew.innerHTML = "Gesamtzahl Einwohner*innen" + name + "in 2022";
+        textwachstumpercent.innerHTML = "Bevölkerungswachstum zwischen 2000 und 2022 in" + name;
+        textwachstumsnumbers.innerHTML = "Wachstumsrate seit 2000 in" + name;
     }
 });
 //# sourceMappingURL=my-script.js.map
