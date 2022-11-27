@@ -52,10 +52,10 @@ window.addEventListener('load', function () {
     const populationnew = document.querySelector(".populationnew")
     const wachstumnumbers = document.querySelector(".wachstumnumbers")
     const wachstumspercent = document.querySelector(".wachstumpercent")
-    const textpopold = document.querySelector(".text1")
-    const textpopnew = document.querySelector(".text2")
-    const textwachstumsnumbers = document.querySelector(".text3")
-    const textwachstumpercent = document.querySelector(".text4")
+    const textpopold = document.querySelector(".textpopold")
+    const textpopnew = document.querySelector(".textpopnew")
+    const textwachstumsnumbers = document.querySelector(".textwachstumnumbers")
+    const textwachstumpercent = document.querySelector(".textwachstumpercent")
 
 
     const chart = document.querySelector(".chart") as HTMLDivElement
@@ -82,9 +82,9 @@ window.addEventListener('load', function () {
         wachstumnumbers.innerHTML = (popchange1/1000000).toFixed(2)+ " Mio"; 
         wachstumspercent.innerHTML = (popchange2).toFixed(2) +" %";
         chart.style.height = chartheight + "%"
-        textpopold.innerHTML = "Gesamtzahl Einwohner*innen" + name + "in 2000";
-        textpopnew.innerHTML = "Gesamtzahl Einwohner*innen" + name + "in 2022";
-        textwachstumpercent.innerHTML = "Bevölkerungswachstum zwischen 2000 und 2022 in" + name;
-        textwachstumsnumbers.innerHTML = "Wachstumsrate seit 2000 in" + name;         
+        textpopold.innerHTML = " Gesamtzahl Einwohner*innen " + name + " in 2000";
+        textpopnew.innerHTML = " Gesamtzahl Einwohner*innen " + name + " in 2022";
+        textwachstumpercent.innerHTML = " Bevölkerungswachstum zwischen 2000 und 2022 in " + name;
+        textwachstumsnumbers.innerHTML = " Wachstumsrate seit 2000 in " + name;         
     } 
 })    
