@@ -49,14 +49,13 @@ pad9.addEventListener('click', function () {
     playSample(sound9);
 });
 playButton.addEventListener('click', function () {
+    let i = 0;
     setInterval(function () {
-        playSample(beat[0]);
+        playSample(beat[i]);
+        i++;
+        if (i === 3) {
+            i = 0;
+        }
     }, 1000);
-    setInterval(function () {
-        playSample(beat[1]);
-    }, 900);
-    setInterval(function () {
-        playSample(beat[2]);
-    }, 800);
 });
 //# sourceMappingURL=my-script.js.map

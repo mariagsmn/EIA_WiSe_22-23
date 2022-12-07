@@ -55,15 +55,14 @@ pad9.addEventListener('click', function() {
 });
 
 playButton.addEventListener('click', function() {
+    let i: number = 0
     setInterval(function() {
-        playSample(beat[0])
+        playSample(beat[i])
+        i++; 
+        if (i===3) {
+            i = 0;
+        }
      }, 1000);
-     setInterval(function() {
-        playSample(beat[1])
-     }, 900);
-     setInterval(function() {
-        playSample(beat[2])
-     }, 800);
 });
 
 
