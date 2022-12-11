@@ -58,7 +58,18 @@ h1 {
   background-color: #8e8987;
 }
   
-.fa-solid {
-  font-size: 20px;
+.fas {
+  font-size: 50px;
+  color: rgb(37, 35, 35);
+  margin-left: 20px;
+  margin-top: 20px;
+}
+
+.hidden {
+  display: none !important;
+}
+
+.wrapper {
+  display: flex;
 }
   

@@ -6,9 +6,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Abgabe 8</title>
+    <script src="my-script.js" defer></script>
     <link rel="stylesheet" href="./style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
-    <script src="my-script.js" defer></script>
 </head>
 
 <body>
@@ -25,7 +25,13 @@
         <div class="box pad-8"></div>
         <div class="box pad-9"></div>
     </div>
-    <div><i class="fa-duotone fa-play"></i></div>
+    <div class= "wrapper"> 
+    <div id="playButton">
+        <i class="fas fa-play" id="playIcon"></i>
+        <i class="fas fa-stop hidden" id="stopIcon" ></i>
+    </div>
+    <i class="fas fa-microphone" id="remixButton"></i>
+    </div>
 </body>
 
 </html>
