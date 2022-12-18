@@ -80,7 +80,7 @@ var a09;
     remixButton.addEventListener('click', function () {
         let remix = [];
         for (let index = 0; index < 3; index++) {
-            const randomNumber = Math.round(Math.random() * 9);
+            const randomNumber = Math.round(Math.random() * 8);
             remix.push(allSounds[randomNumber.toString()]);
         }
         beat = remix;
