@@ -1,0 +1,66 @@
+body {
+    text-align: center;
+    background: rgb(218, 183, 183);
+}
+
+h1 {
+    color: rgb(211, 99, 155);
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: 80px;
+    height: 100px;
+    margin: 0px;
+    padding-top: 60px;
+    text-transform: uppercase;
+}
+
+h2 {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.wrapper {
+    text-align: center;
+    position: relative;
+    width: 1600px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+
+
+.box {
+    background-size: cover;
+}
+
+#counter {
+    color: rgb(254, 253, 253);
+}
+
+#inputTodo {
+    width: 400px;
+    height: 30px;
+    align-items: center;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
+}
+
+
+.divLabel {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+
+.fa-trash-alt {
+    opacity: 60%;
+    font-size: 20px;
+    color: whitesmoke;
+    cursor: pointer;
+
+}
+
+.fa-trash-alt:hover {
+    cursor: pointer;
+    opacity: 100%;
+}
+
+.checkBox {
+    cursor: pointer;
+}
