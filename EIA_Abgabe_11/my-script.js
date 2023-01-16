@@ -1,6 +1,7 @@
 ;
 let todos = [
-    { text: "EIA machen",
+    {
+        text: "EIA machen",
         checked: true,
     },
     {
@@ -12,10 +13,10 @@ let todos = [
         checked: false,
     },
 ];
-var inputDOMElement;
-var addButtonDOMElement;
-var todosDOMElement;
-var counterDOMElement;
+let inputDOMElement;
+let addButtonDOMElement;
+let todosDOMElement;
+let counterDOMElement;
 window.addEventListener("load", function () {
     inputDOMElement = document.querySelector("#inputTodo");
     addButtonDOMElement = document.querySelector("#addButton");
@@ -64,4 +65,4 @@ function deleteTodo(index) {
     todos.splice(index, 1);
     drawListToDOM();
 }
-//# sourceMappingURL=script.js.map
+//# sourceMappingURL=my-script.js.map
