@@ -1,8 +1,21 @@
 /*
-    Deklariert wurde ein Array von Object-Instanzen von question
+    Datenstruktur definiert mit vier Werten
+    frage beinhaltet ein string
+    antowrt beinhaltet ein array von strings
+    richtige Antwort beinhaltet ein string
+    link beinhaltet ein string
+*/
+interface question {
+    frage: string;
+    antwort: string[];
+    richtigeAntwort: string;
+    link: string;
+}
+/*
+    Deklariere ein Array von Object-Instanzen von question
     Diese beinhalten sieben HTML Fragen, mit ihren Antwortmöglichkeiten, die richtige Antwort und Links die mehr Informationen haben
  */
-let html_question = [
+let html_question: question[] = [
     {
         "frage": "Kann man mit HTML Tabellen gestalten?",
         "antwort": ["Ja", "Nein", "Nur bei bestimmten Fällen"],
@@ -50,7 +63,7 @@ let html_question = [
     Deklariere ein Array von Object-Instanzen von question
     Diese beinhalten sieben CSS Fragen, mit ihren Antwortmöglichkeiten, die richtige Antwort und Links die mehr Informationen haben
  */
-let css_question = [
+let css_question: question[] = [
     {
         "frage": "Wie oft darf man eine ID in einem HTML-Dokument vergeben?",
         "antwort": ["Einmal", "Zwei mal", "Man darf keine IDs vergeben"],
@@ -98,7 +111,7 @@ let css_question = [
     Deklariere ein Array von Object-Instanzen von question
     Diese beinhalten sieben Typescript Fragen, mit ihren Antwortmöglichkeiten, die richtige Antwort und Links die mehr Informationen haben
  */
-let typescript_question = [
+let typescript_question: question[] = [
     {
         "frage": "Typescript ist Javascript sehr ähnlich",
         "antwort": ["Ja", "Nein", "Typescript ist komplett gleich wie Javascript"],
@@ -142,32 +155,36 @@ let typescript_question = [
         "link": "https://www.edureka.co/blog/interview-questions/typescript-interview-questions/amp/"
     }
 ];
+
 //Konstanten die HTML Elemente beinhalten die im Skript aus- und eingeblendet werden sowie ihr Textinhalt geändert werden
-const start = document.querySelector(".Start");
-const categories = document.querySelector(".categories-container");
-const quiz = document.querySelector(".quiz");
-const question = document.querySelector(".question");
+const start: HTMLElement = document.querySelector(".Start");
+const categories: HTMLElement = document.querySelector(".categories-container");
+const quiz: HTMLElement = document.querySelector(".quiz");
+const question: HTMLElement = document.querySelector(".question");
 const answeroption = document.querySelectorAll(".answer");
-const answercontainer = document.querySelector(".answers");
+const answercontainer = document.querySelector(".answers")
 const response = document.querySelector(".response");
-const Punktestand = document.querySelector(".counter");
-const resultContainer = document.querySelector(".result_container");
-const result = document.querySelector(".result");
+const Punktestand: HTMLElement = document.querySelector(".counter");
+const resultContainer: HTMLElement = document.querySelector(".result_container");
+const result: HTMLElement = document.querySelector(".result");
+
 // Globale Variablen werden deklariert die für die Funktion gebraucht werden
-let rightanswer = "";
-let punkte = 0;
-let usedNumquestion = [];
-let currentcategory;
-let currentquestion;
-let ismixed = false;
+let rightanswer: string = "";
+let punkte: number = 0;
+let usedNumquestion: number[] = [];
+let currentcategory: question[];
+let currentquestion: number;
+let ismixed: boolean = false;
+
 /*
     Funktion wenn Start-Button geklickt wird
     Hier wird Start ausgeblendet und die Kategorien eingeblendet
 */
 function letsStart() {
     start.setAttribute('style', 'display:none');
-    categories.setAttribute('style', 'display:block');
+    categories.setAttribute('style', 'display:block')
 }
+
 /*
     Funktion die aufgerufen wird wenn die Kategorie gemischt ausgewählt wird
     Generiert eine zufällige Nummer von 0 bis 2
@@ -176,7 +193,7 @@ function letsStart() {
 */
 function mixedcategory() {
     let ranNum = Math.floor(Math.random() * 3);
-    let category;
+    let category: question[];
     switch (ranNum) {
         case 0: {
             category = html_question;
@@ -196,11 +213,12 @@ function mixedcategory() {
     }
     categoryselected(category);
 }
+
 /*
     Funktion die aufgerufen wird wenn eine Kategorie/HTML, CSS, Typescript) ausgewählt wurde
     Kategorien werden ausgeblendet und das Quiz wird eingeblendet
     Eine Zähl-Schleife, die normalerweise nur einen Durchlauf hat
-    In der Schleife wird eine zufällige Zahl zwischen 0 bis 6 generiert
+    In der Schleife wird eine zufällige Zahl zwischen 0 bis 6 generiert 
     In einer IF-Anweisung wird abgefragt ob diese zufällige Zahl im Array "usedNumquestion" vorhanden ist
     wenn nicht dann:
         die zufällige Zahl wird dem Array hinzugefügt
@@ -212,12 +230,12 @@ function mixedcategory() {
         wird die Zählvariable um eins reduziert (Schleife geht weiter)
         continue -> neue Schleifeniteration wird gestartet
 */
-function categoryselected(category) {
+function categoryselected(category: question[]) {
     categories.setAttribute('style', 'display:none');
     quiz.setAttribute('style', 'display:block');
-    let ranNum;
+    let ranNum: number;
     for (let i = 0; i < 1; i++) {
-        ranNum = Math.floor(Math.random() * 7);
+        ranNum = Math.floor(Math.random() * 7)
         if (usedNumquestion.includes(ranNum) == false) {
             usedNumquestion.push(ranNum);
             question.innerText = category[ranNum].frage;
@@ -229,12 +247,13 @@ function categoryselected(category) {
             continue;
         }
     }
-    generateAnswers(category[ranNum]);
+    generateAnswers(category[ranNum])
 }
+
 /*
     Funktion die aufgerufen wird, um Antworten einer Frage zu generieren
     Eine Zähl-Schleife, die normalerweise nur drei Durchläufe (Anzahl der Antwort-Container) hat
-    In der Schleife wird eine zufällige Zahl zwischen 0 bis 2 generiert
+    In der Schleife wird eine zufällige Zahl zwischen 0 bis 2 generiert 
     In einer IF-Anweisung wird abgefragt ob diese zufällige Zahl im Array "usenNumanswer" vorhanden ist
     wenn nicht dann:
         die zufällige Zahl wird dem Array hinzugefügt
@@ -244,11 +263,11 @@ function categoryselected(category) {
         continue -> neue Schleifeniteration wird gestartet
     Es geht so lange weiter bis alle drei Amtworten in einer zufälligen Reihenfolge angezeigt wird
 */
-function generateAnswers(whichquestion) {
-    let usedNumanswer = [];
-    let ranNum;
+function generateAnswers(whichquestion: question) {
+    let usedNumanswer: number[] = [];
+    let ranNum: number;
     for (let i = 0; i < answeroption.length; i++) {
-        ranNum = Math.floor(Math.random() * 3);
+        ranNum = Math.floor(Math.random() * 3)
         if (usedNumanswer.includes(ranNum) == false) {
             usedNumanswer.push(ranNum);
             answeroption[i].innerHTML = whichquestion.antwort[ranNum];
@@ -259,17 +278,18 @@ function generateAnswers(whichquestion) {
         }
     }
 }
+
 /*
     Funktion die aufgerufen wird wenn eine Antwort angeklickt wurde
-    Antwortmöglichkeiten werden ausgeblendet und das Ergebnis wird eingeblendet
+    Antwortmöglichkeiten wird ausgeblendet und das Ergebnis wird eingeblendet
     Wenn der Inhalt des angeklickten Antwort der richtigen Antwort entspricht:
-        punkte werden um 1 erhöht
+        punkte wird um 1 erhöht
         Neuer Punktestand wird angezeigt
         Es wird anzeigt das die Antwort richtig ist und ein Link wird angezeigt, die mehr Informationen beinhaltet
     Wenn nicht:
         Es wird anzeigt das die Antwort falsch ist und ein Link wird angezeigt, die mehr Informationen beinhaltet
 */
-function answerclicked(x) {
+function answerclicked(x: number) {
     answercontainer.setAttribute('style', 'display:none');
     response.setAttribute('style', 'display:block');
     if (answeroption[x].innerHTML == rightanswer) {
@@ -281,15 +301,16 @@ function answerclicked(x) {
         document.querySelector("span").innerHTML = "Leider lagst du hier falsch<br>Weitere Infos du <a href='" + currentcategory[currentquestion].link + "' target='_blank'>hier</a>";
     }
 }
+
 /*
     Funktion die aufgerufen wenn alle sieben Fragen beantwortet wurden oder fünf Punkte erreicht wurden
     Das Endergebnis wird eingeblendet und das Quiz wird ausgeblendet
     wenn true:
         positiver Feedback und finaler Punktestand
     wenn false:
-        negativer Feedback und finaler Punktestand
+        negativer Feedbakc und finaler Punktestand
 */
-function finalresult(y) {
+function finalresult(y: boolean) {
     resultContainer.setAttribute('style', 'display: block');
     quiz.setAttribute('style', 'display: none');
     if (y == true) {
@@ -299,6 +320,7 @@ function finalresult(y) {
         result.innerHTML = "Leider wurden alle Fragen beantwortet<br>und es wurden keine fünf Punkte erreicht<br>Punktestand: " + String(punkte);
     }
 }
+
 /*
     Funktion die aufgerufen wenn man neu starten will
     Variablen werden zurückgesetzt
@@ -312,6 +334,7 @@ function newRun() {
     resultContainer.setAttribute('style', 'display: none');
     start.setAttribute('style', 'display:block');
 }
+
 // Klickevents
 document.querySelector(".StartButton").addEventListener('click', letsStart);
 document.querySelector(".category_html").addEventListener('click', () => {
@@ -320,11 +343,11 @@ document.querySelector(".category_html").addEventListener('click', () => {
 });
 document.querySelector(".category_css").addEventListener('click', () => {
     currentcategory = css_question;
-    categoryselected(css_question);
+    categoryselected(css_question)
 });
 document.querySelector(".category_typescript").addEventListener('click', () => {
     currentcategory = typescript_question;
-    categoryselected(typescript_question);
+    categoryselected(typescript_question)
 });
 document.querySelector(".category_gemischt").addEventListener('click', () => {
     ismixed = true;
@@ -332,15 +355,16 @@ document.querySelector(".category_gemischt").addEventListener('click', () => {
 });
 for (let i = 0; i < answeroption.length; i++) {
     answeroption[i].addEventListener('click', () => {
-        answerclicked(i);
+        answerclicked(i)
     });
 }
+
 /*
     Klickevent nach dem klicken des Weiter-Button
     es wird nachgeschaut ob die Kategorie gemsicht geklickt wurde oder nicht
-    Antort wird eingeblendet und das Ergebnis wird ausgeblendet
-    wenn sieben Fragen beantwortet wurde, wird geschaut ob hier die fünf Punkte erreicht werden oder nicht
-    man kann auch die fünf Punkte vorher erreichen und das quiz wird beendet.
+    Antort wird eingebelnedet und das Ergebnis wird ausgeblendet
+    wenn sieben Fragen beantwortet wurde, wird geschaut ob hier die fünf Punkte erreicht wird oder nicht
+    man kann auch die fünf Punkte vorher erreichen und das quiz wird beendet
 */
 document.querySelector(".weiter").addEventListener('click', () => {
     if (ismixed) {
@@ -364,6 +388,8 @@ document.querySelector(".weiter").addEventListener('click', () => {
     }
 });
 document.querySelector(".restart").addEventListener('click', newRun);
-// ich habe die letzten Wochen drei Online-Kurse zu typescript belegt. 
-// Da ich für diese Kurse bezahlt habe, kann ich sie nicht verlinken, aber sie sind auf der Seite udemy.com zu finden. 
-//# sourceMappingURL=my-script.js.map
+
+/* Ich habe die letzten Wochen drei Kurse über typescript belegt
+   diese haben mir beim Verstehen der Aufgabe geholfen, ich kann sie allerdings nicht
+   verlinken, da ich für sie bezahlt habe
+*/   

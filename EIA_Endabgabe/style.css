@@ -64,9 +64,9 @@ body {
     display: none; }
   
   .question-container {
-    height: 300px;
-    width: 70%;
-    margin: 0 auto 100px auto;
+    height: 200px;
+    width: 55%;
+    margin: 0 auto 70px auto;
     display: table;
     text-align: center;
     background-color: #ecd8c6; }
@@ -77,15 +77,13 @@ body {
       color: #FDFAF7; }
   
   .answers {
-    width: 70%;
-    margin: 0 auto;
-    grid-template-columns: 1fr 1fr 1fr; }
+    width: 55%;
+    margin: 0 auto; }
     .answers .option {
-      height: 100px;
+      height: 60px;
       width: 100%;
       display: table;
       text-align: center;
-      margin: 0 20px;
       background-color: #FDFAF7;
       border-style: solid;
       border-width: 1px;
@@ -102,12 +100,12 @@ body {
           color: #FDFAF7; }
   
   .response {
-    width: 70%;
+    width: 55%;
     margin: 0 auto;
     display: none; }
     .response .info {
       width: 100%;
-      height: 200px;
+      height: 140px;
       display: table;
       text-align: center;
       background-color: #ecd8c6;
@@ -118,7 +116,7 @@ body {
         vertical-align: middle;
         color: #FDFAF7; }
     .response .weiter {
-      height: 100px;
+      height: 55px;
       display: table;
       text-align: center;
       margin-bottom: 20px;
@@ -180,7 +178,7 @@ body {
       padding-top: 5vh;
       height: 75vh; }
       .categories-container .categories {
-        grid-template-columns: 1fr; }       
+        grid-template-columns: 1fr; }
   
     .question-container {
       height: 175px;
@@ -208,3 +206,4 @@ body {
     .result_container .restart {
       width: 200px;
       height: 75px; } }
+  
