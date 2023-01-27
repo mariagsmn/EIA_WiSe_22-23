@@ -392,5 +392,5 @@ document.querySelector(".restart").addEventListener('click', newRun);
 /* Ich habe die letzten Wochen drei Kurse über typescript belegt
    diese haben mir beim Verstehen der Aufgabe geholfen, ich kann sie allerdings nicht
    verlinken, da ich für sie bezahlt habe
-   Deswegen sieht meine CSS Datei auch anders aus, als bei den letzten Abgaben
+   Deswegen sieht meine CSS Datei auch anders aus, als bei den letzten Abgaben.
 */   
