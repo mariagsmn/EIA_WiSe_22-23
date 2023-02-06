@@ -89,7 +89,7 @@ let css_question: question[] = [
         "link": "https://www.w3schools.com/css/css_selectors.asp"
     },
     {
-        "frage": "Was bedeutet der Farbwert rgb (0,0,0)",
+        "frage": "Was bedeutet der Farbwert rgb (0,0,0)?",
         "antwort": ["Es bedeutet, dass die Farbe schwarz ist", "Es bedeutet, dass die Farbe rot ist", "Es bedeutet, dass die Farbe weiß ist"],
         "richtigeAntwort": "Es bedeutet, dass die Farbe schwarz ist",
         "link": "https://www.w3schools.com/css/css_colors_rgb.asp"

@@ -76,7 +76,7 @@ let css_question = [
         "link": "https://www.w3schools.com/css/css_selectors.asp"
     },
     {
-        "frage": "Was bedeutet der Farbwert rgb (0,0,0)",
+        "frage": "Was bedeutet der Farbwert rgb (0,0,0)?",
         "antwort": ["Es bedeutet, dass die Farbe schwarz ist", "Es bedeutet, dass die Farbe rot ist", "Es bedeutet, dass die Farbe weiß ist"],
         "richtigeAntwort": "Es bedeutet, dass die Farbe schwarz ist",
         "link": "https://www.w3schools.com/css/css_colors_rgb.asp"
@@ -367,5 +367,6 @@ document.querySelector(".restart").addEventListener('click', newRun);
 /* Ich habe die letzten Wochen drei Kurse über typescript belegt
    diese haben mir beim Verstehen der Aufgabe geholfen, ich kann sie allerdings nicht
    verlinken, da ich für sie bezahlt habe
+   Deswegen sieht meine CSS Datei auch anders aus, als bei den letzten Abgaben.
 */ 
 //# sourceMappingURL=my-script.js.map
